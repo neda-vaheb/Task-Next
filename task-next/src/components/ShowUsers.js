@@ -7,15 +7,11 @@ import UserList from "./UserList";
 
 function ShowUsers({ SearchParams }) {
   const { users, setUsers } = useContext(UserContext);
-  const limit = 2; //number of users
   const searchParams = useSearchParams();
   const router = useRouter();
   const page = Number(searchParams.get("page")) || 1;
   const perPage = Number(searchParams.get("per_page")) || 2;
   
-  // محاسبه تعداد کل صفحات
-  const totalPages = Math.ceil(users.length / perPage);
-
   useEffect(() => {
     const loadUsers = async () => {
       const allUsers = await fechUsers();

@@ -3,28 +3,30 @@ import { UserContext } from "@/provider/UserContext";
 import React, { useContext, useEffect, useState } from "react";
 import Modal from "./Modal";
 import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Search from "./module/Search";
 import Sort from "./module/Sort";
+import { useDispatch, useSelector } from "react-redux";
+import { selectUser } from "@/core/features/userSlice";
 
 function UserList({ searchParams }) {
   const { users, setUsers } = useContext(UserContext);
   const [sortOption, setSortOption] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
-  const [selectUser, setSelectUser] = useState(null);
+  // const [isOpen, setIsOpen] = useState(false);
+  // const [selectUser, setSelectUser] = useState(null);
+  
+const{selectedUser ,isOpen} = useSelector((state)=>state.users)
+  const dispatch = useDispatch();
   const [search, setSearch] = useState("");
   const [searchFiled, setSearchFiled] = useState("name");
   const [filterUser, SetFilterUser] = useState("");
   const limit = 5;
   const mySearchParams = useSearchParams();
-  const router = useRouter();
   const page = mySearchParams.get("page") || 1;
-  const perPage = mySearchParams.get("per_page") || 2;
   const startIndex = (page - 1) * limit;
   const endIndex = startIndex + limit;
   const paginateUsers = filterUser.slice(startIndex, endIndex);
-  const totalPages = Math.ceil(users.length / limit);
+
   useEffect(() => {
     const results = users.filter((user) => {
       const fieldValue = user[searchFiled].toLowerCase();
@@ -35,15 +37,15 @@ function UserList({ searchParams }) {
 
 
 
-  const selectUserHandler = (user) => {
-    setSelectUser(user);
-    setIsOpen(true);
-  };
+  // const selectUserHandler = (user) => {
+  //   setSelectUser(user);
+  //   setIsOpen(true);
+  // };
 
-  const closeHandler = () => {
-    setSelectUser(null);
-    setIsOpen(false);
-  };
+  // const closeHandler = () => {
+  //   setSelectUser(null);
+  //   setIsOpen(false);
+  // };
 
   const handleSort = (option) => {
     setSortOption(option);
@@ -91,7 +93,7 @@ function UserList({ searchParams }) {
           {filterUser.length > 0 ? (
             paginateUsers.map((user) => (
               <tr
-                onClick={() => selectUserHandler(user)}
+                onClick={() => dispatch(selectUser(user))}
                 key={user.id}
                 className="hover:bg-base-100 transition-colors"
               >
@@ -126,15 +128,10 @@ function UserList({ searchParams }) {
           )}
         </tbody>
       </table>
-
-      {isOpen && selectUser && (
-        <Modal
-          isOpen={isOpen}
-          closeHandler={closeHandler}
-          setIsOpen={setIsOpen}
-          selectUser={selectUser}
-        />
+     {isOpen && (
+        <Modal/>
       )}
+ 
     </div>
   );
 }

@@ -3,7 +3,7 @@ import React from 'react'
 function Sort({handleSort ,sortOption}) {
   return (
     <div className="flex items-center gap-2 mb-4">
-    <div className="text-[1rem] font-medium">Sort by:</div>
+    <div className="text-[1rem] font-medium">SORT BY:</div>
     <button
       onClick={() => handleSort("name")}
       className={`px-[5px] py-[2px] text-[0.8rem]  rounded ${
