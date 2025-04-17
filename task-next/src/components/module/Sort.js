@@ -2,11 +2,11 @@ import React from 'react'
 
 function Sort({handleSort ,sortOption}) {
   return (
-    <div className="flex items-center gap-2 mb-4">
-    <div className="text-[1rem] font-medium">SORT BY:</div>
+    <div className="flex items-center gap-2 mb-4 flex-wrap">
+    <div className="md:text-[1rem] text-[0.75rem] font-medium">SORT BY:</div>
     <button
       onClick={() => handleSort("name")}
-      className={`px-[5px] py-[2px] text-[0.8rem]  rounded ${
+      className={`px-[5px] py-[2px] md:text-[0.8rem] text-[0.6rem]  rounded ${
         sortOption === "name"
           ? "btn btn-active"
           : "btn btn-soft btn-primary"
@@ -16,7 +16,7 @@ function Sort({handleSort ,sortOption}) {
     </button>
     <button
       onClick={() => handleSort("email")}
-      className={`px-[5px] py-[2px] text-[0.8rem] rounded ${
+      className={`px-[5px] py-[2px] md:text-[0.8rem] text-[0.6rem]  rounded ${
         sortOption === "email"
           ? "btn btn-active"
           : "btn btn-soft btn-primary"
@@ -26,7 +26,7 @@ function Sort({handleSort ,sortOption}) {
     </button>
     <button
       onClick={() => handleSort("username")}
-      className={`px-[5px] py-[2px] text-[0.8rem] rounded ${
+      className={`px-[5px] py-[2px] md:text-[0.8rem] text-[0.6rem] rounded ${
         sortOption === "username"
           ? "btn btn-active"
           : "btn btn-soft btn-primary"

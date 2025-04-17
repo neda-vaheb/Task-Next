@@ -2,8 +2,8 @@ import React from 'react'
 
 function Search({search,setSearch,searchFiled,setSearchFiled}) {
   return (
-    <div className="mb-4 flex gap-[10px]">
-    <div className="input w-2xs">
+    <div className="mb-4 flex flex-wrap gap-[10px]">
+    <div className="input md:w-2xs w-44">
       <svg
         className="h-[1em] opacity-50"
         xmlns="http://www.w3.org/2000/svg"
@@ -32,7 +32,7 @@ function Search({search,setSearch,searchFiled,setSearchFiled}) {
     <select
       value={searchFiled}
       onChange={(e) => setSearchFiled(e.target.value)}
-      className="w-[150px] select select-primary"
+      className="md:w-[150px] w-36 select select-primary"
     >
       <option value="name">Name</option>
       <option value="email">Email</option>
