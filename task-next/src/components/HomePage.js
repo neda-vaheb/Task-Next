@@ -1,9 +1,10 @@
 import React from 'react'
-import UserList from './UseList'
+
+import ShowUsers from './ShowUsers'
 
 function HomePage() {
   return (
-  <UserList/>
+  <ShowUsers/>
   )
 }
 

@@ -2,10 +2,10 @@
 import fechUsers from "@/utils/fetchUsers";
 import { useRouter, useSearchParams } from "next/navigation";
 import React, { useContext, useEffect, useState } from "react";
-import ShowUser from "./ShowUser";
 import { UserContext } from "../provider/UserContext";
+import UserList from "./UserList";
 
-function UserList({ SearchParams }) {
+function ShowUsers({ SearchParams }) {
   const { users, setUsers } = useContext(UserContext);
   const limit = 2; //number of users
   const searchParams = useSearchParams();
@@ -26,7 +26,7 @@ function UserList({ SearchParams }) {
 
   return (
     <div>
-      <ShowUser />
+      <UserList />
       <div className="flex justify-center align-middle gap-[15px] items-center">
         <button
           className={page <= 1 ? "btn btn-disabled" : "btn btn-soft btn-primary"}
@@ -54,4 +54,4 @@ function UserList({ SearchParams }) {
   );
 }
 
-export default UserList;
+export default ShowUsers;
