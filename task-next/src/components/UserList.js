@@ -80,7 +80,7 @@ const{selectedUser ,isOpen} = useSelector((state)=>state.users)
        <Search search={search} setSearch={setSearch} searchFiled={searchFiled} setSearchFiled={setSearchFiled}/>
       </div>
       {/* table */}
-      <table className="table table-zebra table-auto min-w-full overflow-x-auto md:w-full max-w-[1000px] m-auto my-8">
+      <table className="table table-zebra table-auto  overflow-x-auto  max-w-[1000px] m-auto my-8">
         <thead className="bg-base-200 text-base-content">
           <tr className="bg-gray-200">
             <th className="px-4 py-4">UserId</th>
