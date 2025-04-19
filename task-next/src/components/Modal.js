@@ -21,7 +21,7 @@ if(!selectedUser)return;
           <h3 className="text-xl font-semibold">User Details</h3>
           <button
             onClick={()=>dispatch(close())}
-            className="btn btn-sm btn-circle btn-ghost"
+            className="btn btn-sm btn-circle btn-ghost text-black"
           >
             ✕
           </button>
@@ -31,19 +31,19 @@ if(!selectedUser)return;
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="text-gray-600">Name:</p>
-              <p className="font-medium">{selectedUser?.name || "N/A"}</p>
+              <p className="font-medium text-black">{selectedUser?.name || "N/A"}</p>
             </div>
             <div>
               <p className="text-gray-600">Username:</p>
-              <p className="font-medium">{selectedUser?.username || "N/A"}</p>
+              <p className="font-medium text-black">{selectedUser?.username || "N/A"}</p>
             </div>
             <div>
               <p className="text-gray-600">Email:</p>
-              <p className="font-medium">{selectedUser?.email || "N/A"}</p>
+              <p className="font-medium text-black">{selectedUser?.email || "N/A"}</p>
             </div>
             <div>
               <p className="text-gray-600">Phone:</p>
-              <p className="font-medium">{selectedUser?.phone || "N/A"}</p>
+              <p className="font-medium text-black">{selectedUser?.phone || "N/A"}</p>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ import Search from "./module/Search";
 import Sort from "./module/Sort";
 import { useDispatch, useSelector } from "react-redux";
 import { selectUser } from "@/core/features/userSlice";
-
+import Loader from "@/app/Loader";
 function UserList({ searchParams }) {
   const { users, setUsers } = useContext(UserContext);
   const [sortOption, setSortOption] = useState("");
@@ -82,7 +82,7 @@ const{selectedUser ,isOpen} = useSelector((state)=>state.users)
       {/* table */}
       <table className="table table-zebra table-auto  overflow-x-auto  max-w-[1000px] m-auto my-8">
         <thead className="bg-base-200 text-base-content">
-          <tr className="bg-gray-200">
+          <tr className="bg-gray-200 dark:bg-transparent ">
             <th className="px-4 py-4">UserId</th>
             <th className="px-4 py-4">Name</th>
             <th className="px-4 py-4">UserName</th>
@@ -122,7 +122,7 @@ const{selectedUser ,isOpen} = useSelector((state)=>state.users)
                 colSpan="5"
                 className="px-6 py-4 text-center text-sm text-gray-500"
               >
-                هیچ کاربری یافت نشد
+               <Loader/>
               </td>
             </tr>
           )}
