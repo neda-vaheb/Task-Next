@@ -18,7 +18,7 @@ if(!selectedUser)return;
       <div  className="modal modal-open fixed inset-0 z-50 flex items-center justify-center bg-gray-500 bg-opacity-50">
       <div className="modal-box bg-white rounded-lg shadow-xl max-w-2xl w-full">
         <div className="flex items-center justify-between p-4">
-          <h3 className="text-xl font-semibold">User Details</h3>
+          <h3 className="text-xl font-semibold text-black">User Details</h3>
           <button
             onClick={()=>dispatch(close())}
             className="btn btn-sm btn-circle btn-ghost text-black"
