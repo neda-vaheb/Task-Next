@@ -10,9 +10,9 @@ function Search({search,setSearch,searchFiled,setSearchFiled}) {
         viewBox="0 0 24 24"
       >
         <g
-          stroke-linejoin="round"
-          stroke-linecap="round"
-          stroke-width="2.5"
+          strokeLinejoin="round"
+          strokeLinecap="round"
+          strokeWidth="2.5"
           fill="none"
           stroke="currentColor"
         >

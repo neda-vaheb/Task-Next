@@ -5,8 +5,8 @@ import React, { useContext, useEffect, useState } from "react";
 import { UserContext } from "../provider/UserContext";
 import UserList from "./UserList";
 
-function HomePage({ SearchParams }) {
-  const { users, setUsers } = useContext(UserContext);
+function HomePage() {
+  const {  setUsers } = useContext(UserContext);
   const searchParams = useSearchParams();
   const router = useRouter();
   const page = Number(searchParams.get("page")) || 1;
